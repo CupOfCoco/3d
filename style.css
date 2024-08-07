@@ -308,8 +308,8 @@ img {
 }
 model-viewer {
     width: 53vw;
-    height: 95vh;
-    background-color: black;
+    height: 100vh;
+    background: transparent;
 }
 /* @media screen and (min-width: 1150px) {
     .container{
