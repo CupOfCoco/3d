@@ -6,45 +6,70 @@
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<meta name="generator" content="Geany 1.37.1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	
-	<link href="style.css" rel="stylesheet">
-	<!-- The following libraries and polyfills are recommended to maximize browser support -->
-    <!-- NOTE: you must adjust the paths as appropriate for your project -->
-    
-    <!--  REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
+    <link href="style.css" rel="stylesheet">
      <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script> 
-
-    <!--  OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
-	<!--     <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script> -->
-
-    <!--  OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
-	<!--     <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script> -->
-    
-    <!--  OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
-	<!--
-   <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
-	-->
 </head>
 
 <body>
-	<!-- 3D content for your site: -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="" class="nav-logo">Lily
+            </a>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#portfolio" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="nav-close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="ri-function-line"></i>
+            </div>
+        </nav>
+    </header>
+	
+   
 
-    <model-viewer src="scene.gltf" alt="A 3D model of a car" shadow-intensity="1" camera-controls auto-rotate ar >
-    </model-viewer>
+    <main class="main">
+        <!-- <div class="inner-"></div>
+        <div class="outer-cursor"></div> -->
+        <!--==================== HOME ====================-->
+        <section class="home" id="home">
+            <div class="home-data">
+                <div class="home-header">
+                    <h1 class="home-title">Hi, I'm Lilian</h1><br>
+                    <h2 class="home-subtitle">Web Developer</h2>
+                </div>
+            </div>
+            <model-viewer src="scene.gltf" alt="3D model" shadow-intensity="1" camera-controls 
+            disable-pan disable-zoom interception-prompt="none"
+            min-camera-orbit="auto 55deg auto" max-camera-orbit="auto 92deg auto" field-of-view="35.3deg" >
+            </model-viewer>
+        </section>
+	</main>
 
-
-	<!-- 💁 Include both scripts below to support all browsers! -->
-
-	<!-- Loads <model-viewer> for modern browsers: -->
-	  <script type="module"
-		  src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
-	  </script>
-
-	<!-- Loads <model-viewer> for old browsers like IE11: -->
+	<script type="module"
+		src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+	</script>
 	<script nomodule
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
 	</script>
+    <script src="index.js"></script>
 </body>
 
 </html>
