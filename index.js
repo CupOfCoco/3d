@@ -1,66 +1,181 @@
-const navMenu = document.getElementById('nav-menu');
-const navToggle = document.getElementById('nav-toggle');
-const navClose = document.getElementById('nav-close');
+//MENU
+const navMenu = document.getElementById("nav-menu");
+const navToggle = document.getElementById("nav-toggle");
+const navClose = document.getElementById("nav-close");
 
-if(navToggle){
-    navToggle.addEventListener('click', () =>{
-        navMenu.classList.add('show-menu')
-    })
+if (navToggle) {
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.add("show-menu");
+  });
 }
-if(navClose){
-    navClose.addEventListener('click', () =>{
-        navMenu.classList.remove('show-menu')
-    })
-}
-
-//
-
-function scrollHeader(){
-    const header = document.getElementById('header')
-    if(this.scrollY >= 50)header.classList.add('scroll-header');
-    else header.classList.remove('scroll-header')
-}
-window.addEventListener('scroll', scrollHeader);
-
-
-//
-document.querySelector('body').addEventListener('mousemove', eyeball);
-function eyeball(){
-    var eye = document.querySelectorAll('.eye');
-    eye.forEach(function(eye){
-        let x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2);
-        let y = (eye.getBoundingClientRect().top) + (eye.clientHeight / 2);
-
-        let radian = Math.atan2(event.pageX - x, event.pageY - y);
-        let rotation = (radian * (180 / Math.PI) * -1) + 270;
-        eye.style.transform = "rotate(" + rotation + "deg)";
-    })
+if (navClose) {
+  navClose.addEventListener("click", () => {
+    navMenu.classList.remove("show-menu");
+  });
 }
 
-//
-let innerCursor = document.querySelector('.inner-cursor');
-let outerCursor = document.querySelector('.outer-cursor');
+//REMOVE MENU
 
-document.addEventListener('mousemove', moveCursor);
+const navLink = document.querySelectorAll(".nav-link");
 
-function moveCursor(e){
-    let x = e.clientX;
-    let y = e.clientY;
-
-    innerCursor.style.left = `${x}px`;
-    innerCursor.style.top = `${y}px`;
-    outerCursor.style.left = `${x}px`;
-    outerCursor.style.top = `${y}px`;
+function linkAction() {
+  const navMenu = document.getElementById("nav-menu");
+  navMenu.classList.remove("show-menu");
 }
+navLink.forEach((n) => n.addEventListener("click", linkAction));
 
-let links = Array.from(document.querySelectorAll("a"));
 
-console.log(links);
-links.forEach(link => {
-    link.addEventListener('mousemove', () =>{
-        innerCursor.classList.add("grow")
+function scrollHeader() {
+  const header = document.getElementById("header");
+  if (this.scrollY >= 50) header.classList.add("scroll-header");
+  else header.classList.remove("scroll-header");
+}
+window.addEventListener("scroll", scrollHeader);
+
+
+
+//CURSOR
+
+function cursor() {
+    let cursor = document.querySelector(".cursor");
+    let body = document.querySelector("body");
+  
+    body.addEventListener("mousemove", (e) => {
+      gsap.to(cursor, {
+        x: e.x + "px",
+        y: e.y + "px",
+      });
     });
-    link.addEventListener('mouseleave', () =>{
-        innerCursor.classList.remove("grow")
+  }
+  cursor();
+
+
+  //LOADER
+
+let intro = document.querySelector('.intro');
+let logo = document.querySelector('.logo-header');
+let logoSpan = document.querySelectorAll('.logo');
+
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    logoSpan.forEach((span, idx) => {
+      setTimeout(() => {
+        span.classList.add('active')
+      }, (idx + 1) * 500);
     });
+
+
+    setTimeout(() => {
+      logoSpan.forEach((span, idx) => {
+        setTimeout(() => {
+          span.classList.remove('active');
+          span.classList.add('fade');
+        }, (idx + 1) * 70)
+      })
+    }, 2000);
+    setTimeout(() => {
+      intro.style.top = '-100vh'
+    }, 2300);
+  })
+});
+
+//VANILLA JS
+
+VanillaTilt.init(document.querySelectorAll(".parentbox"), {
+  max: 25,
+  speed: 400,
+  glare: true,
+  "max-glare": 1,
+});
+
+//SCROLLER
+
+const scrollers = document.querySelectorAll('.scroller');
+
+if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+  addAnimation();
+}
+function addAnimation(){
+  scrollers.forEach((scroller) => {
+    scroller.setAttribute("data-animated", true);
+  
+  
+    const scrollerInner = scroller.querySelector(".scroller-inner");
+    const scrollerContent = Array.from(scrollerInner.children);
+    
+    scrollerContent.forEach(item => {
+      const duplicatedItem = item.cloneNode(true);
+      duplicatedItem.setAttribute('aria-hidden', true);
+      scrollerInner.appendChild(duplicatedItem);
+    });
+  });
+}
+
+// SLIDES
+
+
+let slides = document.querySelectorAll('.reviews .row1 .slides-container .slide');
+let index = 0;
+
+function next (){
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+}
+
+function prev (){
+    slides[index].classList.remove('active');
+    index = (index - 1 + slides.length) % slides.length;
+    slides[index].classList.add('active');
+}
+
+//SCROLLUP
+
+function scrollUp(){
+  const scrollUp = document.getElementById('scroll-up');
+  if(this.scrollY >= 200) scrollUp.classList.add('show-scroll');
+  else scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp)
+
+  //SCROLLS
+const sections = document.querySelectorAll('section[id]')
+
+function scrollActive(){
+  const scrollY = window.pageYOffset
+
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight
+    const sectionTop = current.offsetTop - 50;
+    sectionId = current.getAttribute('id')
+
+    if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+      document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.add('active-link')
+    }else{
+      document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.remove('active-link')
+    }
+  })
+}
+window.addEventListener('scroll',scrollActive)
+
+//ROLLING TEXT
+let textElement =  document.querySelector('.text');
+let textContent = textElement.textContent;
+textElement.innerHTML = '';
+
+for (let char of textContent){
+  let span = document.createElement('span');
+  span.textContent = char;
+  textElement.appendChild(span);
+}
+let spans = textElement.querySelectorAll('span');
+window.addEventListener('scroll', () => {
+  let scrollDistance = window.scrollY;
+  spans.forEach((span, index) => {
+    if(scrollDistance >= (index + 1) * 10){
+      span.classList.add('active')
+    }else{
+      span.classList.remove('active')
+    }
+  })
 })
