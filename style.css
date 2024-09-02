@@ -181,7 +181,7 @@ img {
 @media screen and (max-width: 767px) {
   .nav-menu {
     position: fixed;
-    background: url(./img/img3.jpg);
+    background: url(./img/img8.jpg) no-repeat;
     background-position: center;
     background-size: cover;
     top: 0;
@@ -391,7 +391,6 @@ model-viewer {
   justify-content: center;
   align-items: center;
   padding-top: 3rem;
-  background: url(../img/img7.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -534,8 +533,9 @@ model-viewer {
 }
 .card1{
   position: relative;
-  width: 50vw;
+  width: 55vw;
   height: 40vh;
+ 
   transform-style: preserve-3d;
 }
 .imgs{
