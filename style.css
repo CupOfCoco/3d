@@ -181,7 +181,7 @@ img {
 @media screen and (max-width: 767px) {
   .nav-menu {
     position: fixed;
-    background: url(../img/img55.jpg) no-repeat;
+    background: url(./img/img3.jpg);
     background-position: center;
     background-size: cover;
     top: 0;
@@ -214,7 +214,7 @@ img {
 }
 .nav-link:hover {
   color: transparent;
-  background: #590780;
+  background: purple;
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -391,7 +391,8 @@ model-viewer {
   justify-content: center;
   align-items: center;
   padding-top: 3rem;
-  background: url(../img/img55.jpg) no-repeat;
+ 
+  background: url(../img/img5.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -400,8 +401,9 @@ model-viewer {
 }
 .about-content{
   width: 40rem;
+  
   background: black;
-  padding: 3rem;
+  padding: 5rem;
 }
 .about-content h3{
   padding-top: 1rem;
@@ -415,7 +417,7 @@ model-viewer {
   padding: 1rem 0;
 }
 #turner{
-  padding: 0 15%;
+  padding: 0 20%;
 }
 @property --rotate{
   syntax: "<angle>";
@@ -490,7 +492,7 @@ model-viewer {
 }
 .btn2::after {
   content: "";
-  background-image: url(../img/circle-arrow.png);
+  background-image: url(../img/btn2.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position-y: bottom;
