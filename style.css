@@ -326,7 +326,7 @@ img {
 }
 model-viewer {
   width: 100vw;
-  height: 600px;
+  height: 500px;
   background: transparent;
 }
 .home-description{
@@ -391,7 +391,6 @@ model-viewer {
   justify-content: center;
   align-items: center;
   padding-top: 3rem;
- 
   background: url(../img/img7.jpg) no-repeat;
   background-size: cover;
   background-position: center;
@@ -401,7 +400,6 @@ model-viewer {
 }
 .about-content{
   width: 40rem;
-  
   background: black;
   padding: 5rem;
 }
