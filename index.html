@@ -9,8 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
-    
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
 </head>
 
@@ -74,7 +74,7 @@
         <section class="home section" id="home">
             <div class="home-container container grid">
                 <div class="home-data">
-                    <div class="home-header">
+                    <div class="home-header" data-aos="fade-right" data-aos-delay="150">
                         <h1 class="home-title">Hi, I'm Lilian</h1>
                         <br />
                         <h2 class="home-subtitle">Web Developer</h2>
@@ -84,30 +84,30 @@
             </div>
 
             <br />
-            <model-viewer src="scene.gltf" alt="3D model" shadow-intensity="1" camera-controls disable-pan disable-zoom
+            <!-- <model-viewer src="scene.gltf" alt="3D model" shadow-intensity="1" camera-controls disable-pan disable-zoom
                 interception-prompt="none" min-camera-orbit="auto 55deg auto" max-camera-orbit="auto 92deg auto"
                 field-of-view="35.2deg">
-            </model-viewer>
+            </model-viewer> -->
         </section>
-        <!-- <a href="#about">
+        <a href="#about">
             <div class="scroll-down"></div>
-        </a> -->
+        </a>
 
         <section class="about" id="about">
             <section>
                 <h2 class="section-title section-title_gradient container">About</h2>
-                <div class="about-content">
-                    <h3 class="text">
+                <div class="about-content"  data-aos="fade-left" data-aos-delay="150">
+                    <h3 class="text"  data-aos="zoom-out-down" data-aos-delay="300">
                         I'm a skilled software developer with experience in Javascript,and expertise
                         in frameworks like ReactJs and NextJs.
                     </h3>
-                    <p>
+                    <p class= "p" data-aos="zoom-in-up" data-aos-delay="450">
                         I'm a quick learner and
                         collaborate closely with clients to create efficient, scalable,
                         and user-friendly solutions that solve real-world problems.
                         Let's work together to bring your ideas to life.
                     </p>
-                    <a href="files/Software Developer(FrontEnd)UpD (1).pdf" <button class="btn2">Download CV</button></a>
+                    <a href="cv.html" <button class="btn2" class= "p" data-aos="zoom-out-down" data-aos-delay="450">Download CV</button></a>
                     
                 </div>
                 <!-- <div class="banner">
@@ -154,7 +154,7 @@
             <h2 class="section-title section-title_gradient">Portfolio</h2>
             <div class="port">
 
-                <div class="card1">
+                <div class="card1" data-aos="fade-up-right" data-aos-delay="150">
                     <div class="face front">
                         <h3>GaiaLuxwear</h3>
                     </div>
@@ -163,16 +163,16 @@
                                 class="imgs"></a>
                     </div>
                 </div>
-                <div class="card1">
+                <div class="card1" data-aos="fade-up-left" data-aos-delay="300">
                     <div class="face front">
                         <h3>GaiaMotors</h3>
                     </div>
                     <div class="face back">
-                        <a href="https://gaiamotors.netlify.app/"><img src="./img/gaiatouch.png" alt=""
+                        <a href="https://gaiamotors.netlify.app/"><img src="./img/screenshot gaiamotors.PNG" alt=""
                                 class="imgs"></a>
                     </div>
                 </div>
-                <div class="card1">
+                <div class="card1" data-aos="fade-up-right" data-aos-delay="450">
                     <div class="face front">
                         <h3>GaiaLiquors</h3>
                     </div>
@@ -181,19 +181,19 @@
                                 class="imgs"></a>
                     </div>
                 </div>
-                <div class="card1">
+                <div class="card1" data-aos="fade-up-left" data-aos-delay="600">
                     <div class="face front">
                         <h3>GaiaFoods</h3>
                     </div>
                     <div class="face back">
-                        <a href="https://gaiafoods.netlify.app/"><img src="./img/Screenshot gaiafood.png" alt=""
+                        <a href="https://gaiafoods.netlify.app/"><img src="./img/Screenshot gaia food.png" alt=""
                                 class="imgs"></a>
                     </div>
                 </div>
             </div>
         </section>
-        <div id="main1">
-            <video src="./vid1.mp4" autoplay muted loop></video>
+        <div id="main1" data-aos="flip-up" data-aos-delay="150">
+            <img src="../img/img55.jpg" alt="">
             <h1 id="text1">Explore. Enjoy. Experience.</h1>
             <!-- <div id="scroll-div">
                 <h1>Lilian</h1>
@@ -218,7 +218,7 @@
         </div>
         <h2 class="section-title section-title_gradient">Work</h2>
         <section class="work" id="work">
-            <div class="contain" style="--dly:1s">
+            <div class="contain" style="--dly:1s" >
                 <div class="text-content">
                     <p><i class="ri-graduation-cap-line"></i></p>
                     <h1 class="nigh">University Of Benin</h1>
@@ -274,7 +274,7 @@
         </nav>
        
 
-        <div class="mail">
+        <div class="mail" data-aos="zoom-out-down" data-aos-delay="150">
             <a href="mailto:afubelillian@gmail.com">
                 <button class="mailbtn"> Hire Me</button>
             </a>
@@ -412,10 +412,23 @@
         <div class="ends">
             <p>Copyright &copy; 2023 by <span class="footername">Afube Lilian </span> || All Rights Reserved. </p>
         </div>
-        <a href="" class="scrollup" id="scroll-up">
+        <!-- <a href="" class="scrollup" id="scroll-up">
             <i class="ri-arrow-up-s-line scroll-icon"></i>
-        </a>
+        </a> -->
+        <div id="progress">
+            <span id="progress-value">
+                <i class="ri-arrow-up-s-line scroll-icon"></i>
+            </span>
+        </div>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <script>
+            AOS.init({
+                duration: 1450,
+                offset: 150,
+            });
 
+        </script>
 
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
