@@ -343,6 +343,7 @@ model-viewer {
   justify-content: center;
   color: white;
   position: absolute;
+  bottom: -20%;
   left: 45%;
 
 }
