@@ -253,14 +253,14 @@ img {
 /*=============== HOME ===============*/
 .home-container{
   position: relative;
-  padding-block: 7rem 1rem;
+  padding-block: 5rem 1rem;
   row-gap: 2.5rem;
 }
 .home-header {
   position: relative;
   /* display: grid; */
   /* justify-self: center; */
-  top: 35%;
+  top: 20%;
   left: 10%;
   transform: translateY(-50%);
   max-width: 700px;
@@ -325,8 +325,8 @@ img {
   }
 }
 model-viewer {
-  width: 58vw;
-  height: 100vh;
+  width: 80vw;
+  height: 80vh;
   background: transparent;
 }
 .home-description{
@@ -337,7 +337,16 @@ model-viewer {
 
 
 
-/**************** SCROLL-DOWN ***************/
+.real{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: absolute;
+  bottom: 3%;
+  left: 45%;
+
+}
 .scroll-down {
   height: 40px;
   width: 25px;
